@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/luffa-logo.webp",
+      "image": "./assets/luffa-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#faf9fc"
     },
