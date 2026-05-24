@@ -32,6 +32,7 @@
       "corepack": true,
       "environment": "production",
       "distribution": "store",
+      "prebuildCommand": "cd apps/mobile && npx expo prebuild --platform ios",
       "android": {
         "buildType": "app-bundle",
         "image": "latest"

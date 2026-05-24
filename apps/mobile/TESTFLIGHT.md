@@ -71,8 +71,8 @@ In [expo.dev](https://expo.dev) → **luffa-go-mobile** → **Project settings**
 
 **Important:**
 
-- Do **not** use `/` (repo root) — builds fail with `expo-location` plugin / `expo` not found.
-- When starting a build, set **Base directory** to `apps/mobile` in the build dialog too.
+- **Recommended:** `apps/mobile` in GitHub settings and in the build dialog.
+- If base is `/` (repo root), the repo includes `app.config.cjs` + `prebuildCommand` so builds can still work — but prefer `apps/mobile`.
 
 When starting a build, you can also set **Base directory** to `apps/mobile` in the build modal for that single build.
 
