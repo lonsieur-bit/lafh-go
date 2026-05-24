@@ -62,6 +62,18 @@ On first iOS build, EAS may ask for your **Apple ID** to manage certificates. Fo
 
 ---
 
+## Expo + GitHub (Build from GitHub)
+
+In [expo.dev](https://expo.dev) → **luffa-go-mobile** → **Project settings** → **General**:
+
+- **Root directory:** `apps/mobile`
+
+Without this, GitHub builds fail with `Failed to read "/eas.json"`.
+
+Then **Builds** → **Build from GitHub**: branch `main`, profile `production`, environment **Production**.
+
+---
+
 ## Build and upload to TestFlight
 
 ```powershell

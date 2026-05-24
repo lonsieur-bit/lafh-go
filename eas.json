@@ -6,13 +6,17 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "node": "20.18.0"
     },
     "preview": {
       "distribution": "internal",
       "node": "20.18.0",
       "android": {
         "buildType": "apk"
+      },
+      "ios": {
+        "simulator": false
       }
     },
     "preview-simulator": {
@@ -25,12 +29,22 @@
     "production": {
       "autoIncrement": true,
       "node": "20.18.0",
+      "environment": "production",
+      "distribution": "store",
       "android": {
         "buildType": "app-bundle"
-      }
+      },
+      "ios": {}
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "appleTeamId": "Q5N86V5AL6",
+        "ascAppId": "6755081492",
+        "ascApiKeyIssuerId": "2584f3ee-166a-4360-b8f1-a303c84cd238",
+        "ascApiKeyId": "25Y7P24A3Y"
+      }
+    }
   }
 }
