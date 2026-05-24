@@ -1,6 +1,4 @@
 export { colors } from "./tokens.js";
-
-/** LinearGradient color stops (hex). Match web `from-primary to-primary/85` etc. */
 export const gradients = {
   primary: ["#7c3aed", "#6d28d9"] as const,
   primarySoft: ["#ede9fe", "#faf9fc"] as const,

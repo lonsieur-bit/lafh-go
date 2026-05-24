@@ -5,7 +5,8 @@ node_modules
 dist
 web-build
 apps/admin
-src
+# Root Vite web app only — do not use bare "src" (would exclude apps/mobile/src)
+/src
 *.md
 .env
 .env.*
