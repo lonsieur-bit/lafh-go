@@ -17,8 +17,14 @@ function loadRootEnv() {
 }
 
 const rootEnv = loadRootEnv();
-const supabaseUrl = rootEnv.EXPO_PUBLIC_SUPABASE_URL || rootEnv.VITE_SUPABASE_URL;
-const supabaseAnonKey = rootEnv.EXPO_PUBLIC_SUPABASE_ANON_KEY || rootEnv.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl =
+  process.env.EXPO_PUBLIC_SUPABASE_URL ||
+  rootEnv.EXPO_PUBLIC_SUPABASE_URL ||
+  rootEnv.VITE_SUPABASE_URL;
+const supabaseAnonKey =
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ||
+  rootEnv.EXPO_PUBLIC_SUPABASE_ANON_KEY ||
+  rootEnv.VITE_SUPABASE_ANON_KEY;
 
 const appJson = require("./app.json");
 
