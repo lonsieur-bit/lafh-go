@@ -11,6 +11,7 @@ ios/
 .kotlin/
 *.jks
 *.p8
+apps/mobile/package-lock.json
 *.p12
 *.key
 *.mobileprovision

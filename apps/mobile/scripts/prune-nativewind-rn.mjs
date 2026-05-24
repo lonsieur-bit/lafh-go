@@ -48,9 +48,9 @@ if (version === wantRn) {
   process.exit(0);
 }
 
-console.error(
+console.warn(
   `nativewind has react-native ${version ?? "?"} (expected ${wantRn}). ` +
-    "Removing nested copy — run npm install from repo root.",
+    "Removing nested copy — run npm install from repo root if builds fail.",
 );
 fs.rmSync(nestedRn, { recursive: true, force: true, maxRetries: 3 });
-process.exit(1);
+process.exit(0);

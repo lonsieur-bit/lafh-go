@@ -1,31 +1,56 @@
 {
   "cli": {
-    "version": ">= 10.0.0"
+    "version": ">= 10.0.0",
+    "appVersionSource": "remote"
   },
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "node": "20.18.0",
+      "install": {
+        "workingDirectory": "../.."
+      },
+      "ios": {
+        "appleTeamId": "Q5N86V5AL6"
+      }
     },
     "preview": {
       "distribution": "internal",
+      "node": "20.18.0",
+      "install": {
+        "workingDirectory": "../.."
+      },
       "android": {
         "buildType": "apk"
       },
       "ios": {
-        "simulator": false
+        "simulator": false,
+        "appleTeamId": "Q5N86V5AL6"
       }
     },
     "preview-simulator": {
       "distribution": "internal",
+      "node": "20.18.0",
+      "install": {
+        "workingDirectory": "../.."
+      },
       "ios": {
-        "simulator": true
+        "simulator": true,
+        "appleTeamId": "Q5N86V5AL6"
       }
     },
     "production": {
       "autoIncrement": true,
+      "node": "20.18.0",
+      "install": {
+        "workingDirectory": "../.."
+      },
       "android": {
         "buildType": "app-bundle"
+      },
+      "ios": {
+        "appleTeamId": "Q5N86V5AL6"
       }
     }
   },
