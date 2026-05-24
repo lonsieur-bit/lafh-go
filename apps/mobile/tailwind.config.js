@@ -1,4 +1,4 @@
-const { colors: themeColors } = require("./src/theme/tokens");
+const { colors: themeColors } = require("./src/theme/tokens.js");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
