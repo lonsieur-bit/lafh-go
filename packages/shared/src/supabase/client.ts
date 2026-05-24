@@ -32,15 +32,16 @@ function getEnv(key: string): string | undefined {
     if (key === "VITE_SUPABASE_URL") return process.env.EXPO_PUBLIC_SUPABASE_URL;
     if (key === "VITE_SUPABASE_ANON_KEY") return process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
   }
-  // Vite web only (not parsed on Hermes when guarded behind try/catch)
-  try {
-    const meta = Function('return typeof import.meta !== "undefined" ? import.meta : undefined')() as
-      | { env?: Record<string, string | undefined> }
-      | undefined;
-    const v = meta?.env?.[key];
-    if (v) return v;
-  } catch {
-    // ignore
+  // Literal import.meta.env.* so Vite inlines values at build time (admin / web).
+  if (typeof import.meta !== "undefined" && import.meta.env) {
+    if (key === "VITE_SUPABASE_URL") {
+      const url = import.meta.env.VITE_SUPABASE_URL;
+      if (url) return url;
+    }
+    if (key === "VITE_SUPABASE_ANON_KEY") {
+      const anon = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      if (anon) return anon;
+    }
   }
   return undefined;
 }

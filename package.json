@@ -21,6 +21,7 @@
     "dev:all": "npx concurrently \"npm run dev\" \"npm run dev:admin\"",
     "build": "vite build",
     "build:admin": "npm run build -w @luffa/admin",
+    "testflight:ios": "npm run testflight -w mobile",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",

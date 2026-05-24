@@ -4,5 +4,5 @@
 UPDATE profiles
 SET role = 'admin'
 WHERE id = (
-  SELECT id FROM auth.users WHERE email = 'info@feakra.com' LIMIT 1
+  SELECT id FROM auth.users WHERE email = 'admin@lafhride.info' LIMIT 1
 );

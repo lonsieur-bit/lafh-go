@@ -5,7 +5,8 @@ Builds run on **Expo EAS** (cloud). You do **not** need a Mac on Windows.
 | Item | Value |
 |------|--------|
 | App name | Luffa Go |
-| Bundle ID | `com.luffa.go` |
+| Bundle ID | `com.lafh.app` |
+| App Store Connect Apple ID | `6755081492` |
 | Apple Team | `Q5N86V5AL6` |
 | EAS project | `8fcb8f31-0eba-4642-bedb-802b5e283674` |
 
@@ -41,7 +42,7 @@ Use the Expo account that owns the EAS project.
 
 ### 4. App in App Store Connect
 
-Create app **Luffa Go** with bundle ID **`com.luffa.go`** if it does not exist yet.
+App **Luffa Go** with bundle ID **`com.lafh.app`** (Apple ID `6755081492`) should already exist in App Store Connect.
 
 ### 5. EAS secrets (Supabase)
 
@@ -112,7 +113,7 @@ npm run testflight
 | `eas: command not found` | Use `npx eas-cli` |
 | Missing `.p8` | Download key, place in `apps\mobile\scripts\` |
 | Supabase empty in build | Run `eas secret:create` for both `EXPO_PUBLIC_*` vars |
-| No Apple app | Create `com.luffa.go` in App Store Connect |
+| No Apple app | Use bundle `com.lafh.app` in App Store Connect |
 | Build fails on credentials | `npx eas-cli credentials -p ios` |
 
 ---

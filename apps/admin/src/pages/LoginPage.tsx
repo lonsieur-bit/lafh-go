@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { toast } from "sonner";
 import { useAdminAuth } from "@/context/AdminAuthContext";
 import { isSupabaseReady } from "@luffa/shared";
 
@@ -20,8 +21,11 @@ export default function LoginPage() {
     e.preventDefault();
     setSubmitting(true);
     setError(null);
-    const err = await signIn(email, password);
-    if (err) setError(err);
+    const err = await signIn(email.trim(), password);
+    if (err) {
+      setError(err);
+      toast.error(err);
+    }
     setSubmitting(false);
   };
 

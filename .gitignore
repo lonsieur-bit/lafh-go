@@ -15,3 +15,5 @@ apps/mobile/package-lock.json
 *.p12
 *.key
 *.mobileprovision
+apps/admin/*.zip
+apps/admin/deploy-bundle/

@@ -67,11 +67,49 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
   const signIn = useCallback(async (email: string, password: string) => {
     const supabase = createSupabaseClient();
     if (!supabase) return "لم يتم إعداد Supabase";
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) return error.message;
-    await loadSession();
+
+    const trimmedEmail = email.trim().toLowerCase();
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: trimmedEmail,
+      password,
+    });
+
+    if (error) {
+      const msg = error.message.toLowerCase();
+      if (msg.includes("invalid login") || msg.includes("invalid credentials")) {
+        return "البريد الإلكتروني أو كلمة المرور غير صحيحة.";
+      }
+      if (msg.includes("email not confirmed")) {
+        return "يجب تأكيد البريد الإلكتروني أولاً من رابط التفعيل.";
+      }
+      return error.message;
+    }
+
+    const userId = data.user?.id;
+    if (!userId) return "فشل تسجيل الدخول. حاول مرة أخرى.";
+
+    const p = await fetchProfile(userId);
+    if (!p) {
+      await supabase.auth.signOut();
+      return "لا يوجد ملف مستخدم لهذا الحساب. أنشئ الحساب من تطبيق لفة أولاً.";
+    }
+
+    if (!isStaffRole(p.role)) {
+      await supabase.auth.signOut();
+      return "هذا الحساب ليس مديراً أو موظفاً. نفّذ promote-admin.sql في Supabase لترقية حسابك.";
+    }
+
+    setSession(true);
+    setProfile(p);
+    if (p.role === "employee") {
+      const perms = await fetchEmployeePermissions(p.id);
+      setPermissions(perms);
+    } else {
+      setPermissions(null);
+    }
+    setLoading(false);
     return null;
-  }, [loadSession]);
+  }, []);
 
   const signOut = useCallback(async () => {
     const supabase = createSupabaseClient();

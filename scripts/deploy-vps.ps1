@@ -11,10 +11,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$Root = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
-if (-not (Test-Path (Join-Path $Root "package.json"))) {
-    $Root = Split-Path $PSScriptRoot -Parent
-}
+$Root = Split-Path $PSScriptRoot -Parent
 
 Set-Location $Root
 Write-Host "Building admin from: $Root" -ForegroundColor Cyan

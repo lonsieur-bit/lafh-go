@@ -48,7 +48,7 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host ""
 Write-Host "Starting iOS production build (EAS cloud)..." -ForegroundColor Cyan
-Write-Host "Bundle ID: com.luffa.go | Team: Q5N86V5AL6" -ForegroundColor DarkGray
+Write-Host "Bundle ID: com.lafh.app | Team: Q5N86V5AL6 | ASC App ID: 6755081492" -ForegroundColor DarkGray
 
 # First build must be interactive so EAS can create iOS certs (uses API key env vars above).
 if ($BuildOnly) {
