@@ -64,11 +64,14 @@ On first iOS build, EAS may ask for your **Apple ID** to manage certificates. Fo
 
 ## Expo + GitHub (Build from GitHub)
 
-In [expo.dev](https://expo.dev) → **luffa-go-mobile** → **Project settings** → **General**:
+In [expo.dev](https://expo.dev) → **luffa-go-mobile** → **Project settings** → **GitHub** (not General):
 
-- **Root directory:** `apps/mobile`
+- **Base directory:** `apps/mobile`  
+  Direct link: https://expo.dev/accounts/feakra/projects/luffa-go-mobile/github
 
-Without this, GitHub builds fail with `Failed to read "/eas.json"`.
+**Important:** Do **not** use `/` as the base directory — that causes `Failed to read "/eas.json"`.
+
+When starting a build, you can also set **Base directory** to `apps/mobile` in the build modal for that single build.
 
 Then **Builds** → **Build from GitHub**: branch `main`, profile `production`, environment **Production**.
 

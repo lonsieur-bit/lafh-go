@@ -32,9 +32,12 @@
       "environment": "production",
       "distribution": "store",
       "android": {
-        "buildType": "app-bundle"
+        "buildType": "app-bundle",
+        "image": "latest"
       },
-      "ios": {}
+      "ios": {
+        "image": "latest"
+      }
     }
   },
   "submit": {
