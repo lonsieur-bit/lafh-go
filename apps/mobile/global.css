@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 20% 98%;
+    --foreground: 260 25% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 260 25% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 25% 11%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 20% 95%;
+    --secondary-foreground: 260 25% 18%;
+    --muted: 260 14% 96%;
+    --muted-foreground: 260 10% 46%;
+    --accent: 262 60% 95%;
+    --accent-foreground: 262 83% 42%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 260 13% 91%;
+    --input: 260 13% 91%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
+    --success: 152 69% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 260 25% 11%;
+    --info: 210 92% 52%;
+    --info-foreground: 0 0% 100%;
+    --sidebar-background: 270 10% 98%;
+    --sidebar-foreground: 260 25% 18%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 262 60% 95%;
+    --sidebar-accent-foreground: 262 83% 42%;
+    --sidebar-border: 260 13% 91%;
+    --sidebar-ring: 262 83% 58%;
+    --shadow-sm: 0 1px 3px 0 hsl(260 25% 11% / 0.06);
+    --shadow-md: 0 6px 18px -4px hsl(260 25% 11% / 0.11);
+    --shadow-lg: 0 18px 44px -10px hsl(260 25% 11% / 0.16);
+    --shadow-glow: 0 4px 28px -6px hsl(262 83% 58% / 0.42);
+  }
+}
+
+@layer utilities {
+  .map-pattern {
+    background-image:
+      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(hsl(var(--border)) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+}

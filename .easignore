@@ -1,0 +1,11 @@
+# Limit EAS upload to the monorepo (avoids home-directory git root on Windows)
+node_modules
+.git
+.expo
+dist
+web-build
+apps/admin
+src
+*.md
+.env
+.env.*

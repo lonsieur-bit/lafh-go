@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "name": "Luffa Go",
+    "slug": "luffa-go-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/luffa-logo.webp",
+      "resizeMode": "contain",
+      "backgroundColor": "#faf9fc"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.luffa.go",
+      "infoPlist": {
+        "CFBundleDevelopmentRegion": "ar",
+        "CFBundleLocalizations": ["ar"],
+        "LSApplicationQueriesSchemes": ["maps", "comgooglemaps"],
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.luffa.go",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "supportsRTL": true
+    },
+    "locales": {
+      "ar": "./locales/ar.json"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "نحتاج موقعك لعرض الطلبات القريبة أثناء استقبال الرحلات."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#7c3aed"
+        }
+      ],
+      "expo-font",
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "ios": ["ar"],
+            "android": ["ar"]
+          }
+        }
+      ],
+      "./plugins/withArabicAppLocale.js"
+    ]
+  }
+}

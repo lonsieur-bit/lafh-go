@@ -1,0 +1,37 @@
+const path = require("path");
+const fs = require("fs");
+
+/** Load repo-root .env so Expo gets Supabase keys (monorepo). */
+function loadRootEnv() {
+  const envPath = path.resolve(__dirname, "../../.env");
+  if (!fs.existsSync(envPath)) return {};
+  const out = {};
+  for (const line of fs.readFileSync(envPath, "utf8").split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const eq = trimmed.indexOf("=");
+    if (eq < 0) continue;
+    out[trimmed.slice(0, eq).trim()] = trimmed.slice(eq + 1).trim();
+  }
+  return out;
+}
+
+const rootEnv = loadRootEnv();
+const supabaseUrl = rootEnv.EXPO_PUBLIC_SUPABASE_URL || rootEnv.VITE_SUPABASE_URL;
+const supabaseAnonKey = rootEnv.EXPO_PUBLIC_SUPABASE_ANON_KEY || rootEnv.VITE_SUPABASE_ANON_KEY;
+
+const appJson = require("./app.json");
+
+module.exports = {
+  expo: {
+    ...appJson.expo,
+    extra: {
+      ...appJson.expo.extra,
+      eas: {
+        projectId: "8fcb8f31-0eba-4642-bedb-802b5e283674",
+      },
+      supabaseUrl,
+      supabaseAnonKey,
+    },
+  },
+};

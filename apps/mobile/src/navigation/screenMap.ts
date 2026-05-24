@@ -1,0 +1,28 @@
+export const screenMap = {
+  public: [
+    { webPath: "/", nativeRoute: "PublicLanding", behavior: "Entry and role selection" },
+  ],
+  app: [
+    { webPath: "/app", nativeRoute: "Home", behavior: "Role-aware home and quick actions" },
+    { webPath: "/app/auth", nativeRoute: "Auth", behavior: "Phone and OTP login with validation" },
+    { webPath: "/app/plan-ride", nativeRoute: "PlanRide", behavior: "Uber-style route planner with schedule, stops, and map picker" },
+    { webPath: "/app/booking", nativeRoute: "Booking", behavior: "Select service and prepare booking draft" },
+    { webPath: "/app/checkout", nativeRoute: "Checkout", behavior: "Choose payment and create order" },
+    { webPath: "/app/search-captain", nativeRoute: "SearchCaptain", behavior: "Async captain matching simulation" },
+    { webPath: "/app/cargo-request", nativeRoute: "CargoRequest", behavior: "Goods and parcel shipping form (logistics)" },
+    { webPath: "/app/tow-request", nativeRoute: "TowRequest", behavior: "Flatbed / vehicle recovery request form" },
+    { webPath: "/app/orders", nativeRoute: "Orders", behavior: "Order list and deep-link to details" },
+    { webPath: "/app/orders/:orderId", nativeRoute: "OrderDetails", behavior: "Timeline and receipt view" },
+    { webPath: "/app/chat", nativeRoute: "Chat", behavior: "Local message composer and send flow" },
+    { webPath: "/app/notifications", nativeRoute: "Notifications", behavior: "Read and mark notifications" },
+    { webPath: "/app/wallet", nativeRoute: "Wallet", behavior: "Balance view and top-up actions" },
+    { webPath: "/app/wallet/topup", nativeRoute: "WalletTopUp", behavior: "Amount input and wallet update with loading state" },
+    { webPath: "/app/addresses", nativeRoute: "Addresses", behavior: "Add/delete address via state handlers" },
+    { webPath: "/app/profile", nativeRoute: "Profile", behavior: "Role switching and account actions" },
+    { webPath: "/app/referral", nativeRoute: "Referral", behavior: "Display referral code and copy feedback" },
+    { webPath: "/app/legal/privacy", nativeRoute: "LegalDocument", behavior: "Privacy policy (Arabic)" },
+    { webPath: "/app/legal/terms", nativeRoute: "LegalDocument", behavior: "Terms and conditions (Arabic)" },
+    { webPath: "/app/legal/usage", nativeRoute: "LegalDocument", behavior: "Terms of use (Arabic)" },
+    { webPath: "/app/support", nativeRoute: "Support", behavior: "Help, contact form, email, WhatsApp support" },
+  ],
+} as const;

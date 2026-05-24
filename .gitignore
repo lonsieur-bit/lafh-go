@@ -1,0 +1,16 @@
+node_modules/
+.expo/
+dist/
+web-build/
+.env
+.env.*
+*.log
+.DS_Store
+android/
+ios/
+.kotlin/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
