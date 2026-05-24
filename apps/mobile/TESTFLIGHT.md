@@ -56,9 +56,24 @@ npx eas-cli secret:create --scope project --name EXPO_PUBLIC_SUPABASE_ANON_KEY -
 
 List secrets: `npx eas-cli secret:list`
 
-### 6. Apple credentials on EAS (first build only)
+### 6. Apple credentials on EAS (required before GitHub builds)
 
-On first iOS build, EAS may ask for your **Apple ID** to manage certificates. Follow the CLI prompts, or configure credentials in [expo.dev](https://expo.dev) → your project → Credentials.
+GitHub / CI builds are **non-interactive**. EAS must already have a validated iOS **distribution certificate** and **provisioning profile** on Expo servers.
+
+**Run once** in PowerShell (interactive terminal — not CI):
+
+```powershell
+cd apps\mobile
+.\scripts\setup-ios-credentials.ps1
+```
+
+When prompted, sign in with your **Apple Developer** account and allow EAS to create certificates.
+
+Alternatively: [expo.dev → luffa-go-mobile → Credentials → iOS](https://expo.dev/accounts/feakra/projects/luffa-go-mobile/credentials)
+
+Apple ASC API key env vars are already on the EAS **production** environment (for cert refresh on cloud builds).
+
+After a successful interactive build, **Build from GitHub** works without prompts.
 
 ---
 
@@ -132,7 +147,8 @@ npm run testflight
 | Missing `.p8` | Download key, place in `apps\mobile\scripts\` |
 | Supabase empty in build | Run `eas secret:create` for both `EXPO_PUBLIC_*` vars |
 | No Apple app | Use bundle `com.lafh.app` in App Store Connect |
-| Build fails on credentials | `npx eas-cli credentials -p ios` |
+| Build fails on credentials / `Distribution Certificate is not validated` | Run `.\scripts\setup-ios-credentials.ps1` once interactively, then retry GitHub build |
+| GitHub build fails before Xcode | Ensure **Base directory** = `apps/mobile` in Expo GitHub settings |
 
 ---
 
