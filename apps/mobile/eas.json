@@ -60,6 +60,8 @@
 
       "node": "20.18.0",
 
+      "environment": "production",
+
       "distribution": "store",
 
       "android": {
@@ -81,6 +83,8 @@
       "ios": {
 
         "appleTeamId": "Q5N86V5AL6",
+
+        "ascApiKeyPath": "./scripts/AuthKey_25Y7P24A3Y.p8",
 
         "ascApiKeyIssuerId": "2584f3ee-166a-4360-b8f1-a303c84cd238",
 

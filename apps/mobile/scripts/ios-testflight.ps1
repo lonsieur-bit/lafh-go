@@ -50,12 +50,13 @@ Write-Host ""
 Write-Host "Starting iOS production build (EAS cloud)..." -ForegroundColor Cyan
 Write-Host "Bundle ID: com.luffa.go | Team: Q5N86V5AL6" -ForegroundColor DarkGray
 
+# First build must be interactive so EAS can create iOS certs (uses API key env vars above).
 if ($BuildOnly) {
-  npx eas-cli build -p ios --profile production --non-interactive
+  npx eas-cli build -p ios --profile production
   exit $LASTEXITCODE
 }
 
-npx eas-cli build -p ios --profile production --auto-submit --non-interactive
+npx eas-cli build -p ios --profile production --auto-submit
 $code = $LASTEXITCODE
 if ($code -ne 0) { exit $code }
 
