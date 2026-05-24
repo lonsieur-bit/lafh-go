@@ -1,60 +1,47 @@
-{
-  "cli": {
-    "version": ">= 10.0.0",
-    "appVersionSource": "remote"
-  },
-  "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal",
-      "node": "20.18.0",
-      "install": {
-        "workingDirectory": "../.."
-      },
-      "ios": {
-        "appleTeamId": "Q5N86V5AL6"
-      }
-    },
-    "preview": {
-      "distribution": "internal",
-      "node": "20.18.0",
-      "install": {
-        "workingDirectory": "../.."
-      },
-      "android": {
-        "buildType": "apk"
-      },
-      "ios": {
-        "simulator": false,
-        "appleTeamId": "Q5N86V5AL6"
-      }
-    },
-    "preview-simulator": {
-      "distribution": "internal",
-      "node": "20.18.0",
-      "install": {
-        "workingDirectory": "../.."
-      },
-      "ios": {
-        "simulator": true,
-        "appleTeamId": "Q5N86V5AL6"
-      }
-    },
-    "production": {
-      "autoIncrement": true,
-      "node": "20.18.0",
-      "install": {
-        "workingDirectory": "../.."
-      },
-      "android": {
-        "buildType": "app-bundle"
-      },
-      "ios": {
-        "appleTeamId": "Q5N86V5AL6"
-      }
-    }
-  },
-  "submit": {
-    "production": {}
-  }
-}
+{
+  "cli": {
+    "version": ">= 10.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "node": "20.18.0"
+    },
+    "preview": {
+      "distribution": "internal",
+      "node": "20.18.0",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": false
+      }
+    },
+    "preview-simulator": {
+      "distribution": "internal",
+      "node": "20.18.0",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "node": "20.18.0",
+      "android": {
+        "buildType": "app-bundle"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleTeamId": "Q5N86V5AL6",
+        "ascApiKeyIssuerId": "2584f3ee-166a-4360-b8f1-a303c84cd238",
+        "ascApiKeyId": "25Y7P24A3Y"
+      }
+    }
+  }
+}
+

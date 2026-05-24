@@ -13,18 +13,13 @@
       "node": "20.18.0",
       "android": {
         "buildType": "apk"
-      },
-      "ios": {
-        "simulator": false,
-        "appleTeamId": "Q5N86V5AL6"
       }
     },
     "preview-simulator": {
       "distribution": "internal",
       "node": "20.18.0",
       "ios": {
-        "simulator": true,
-        "appleTeamId": "Q5N86V5AL6"
+        "simulator": true
       }
     },
     "production": {
@@ -32,9 +27,6 @@
       "node": "20.18.0",
       "android": {
         "buildType": "app-bundle"
-      },
-      "ios": {
-        "appleTeamId": "Q5N86V5AL6"
       }
     }
   },

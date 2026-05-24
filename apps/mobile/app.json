@@ -14,6 +14,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.luffa.go",
+      "appleTeamId": "Q5N86V5AL6",
       "infoPlist": {
         "CFBundleDevelopmentRegion": "ar",
         "CFBundleLocalizations": ["ar"],
