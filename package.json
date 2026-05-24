@@ -10,13 +10,10 @@
   ],
   "overrides": {
     "react-native": "0.81.5",
-    "react-native-css-interop": "0.2.4",
-    "nativewind": {
-      "react-native": "0.81.5",
-      "react-native-css-interop": "0.2.4"
-    }
+    "react-native-css-interop": "0.2.4"
   },
   "scripts": {
+    "eas-build-pre-install": "corepack enable",
     "dev": "vite",
     "dev:admin": "npm run dev -w @luffa/admin",
     "dev:all": "npx concurrently \"npm run dev\" \"npm run dev:admin\"",

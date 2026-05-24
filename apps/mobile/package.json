@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
+    "eas-build-pre-install": "cd ../.. && corepack enable",
     "postinstall": "node scripts/prune-nativewind-rn.mjs",
     "start": "expo start",
     "android": "expo run:android",
